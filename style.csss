@@ -147,3 +147,36 @@ footer {
 .reproductor:hover {
     opacity: 1;
 }
+
+/* --- ESTILOS PARA LA PANTALLA DE INICIO --- */
+.pantalla-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #fce4ec; /* Un color rosa de fondo */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; /* Asegura que esté por encima de todo */
+    transition: opacity 0.5s ease; /* Animación de desvanecimiento */
+}
+
+.boton-abrir {
+    background-color: #d81b60;
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.boton-abrir:hover {
+    transform: scale(1.05); /* Se agranda un poquito al pasar el mouse */
+    background-color: #ad1457;
+}
