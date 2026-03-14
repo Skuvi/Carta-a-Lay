@@ -3,66 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Querida Lays...</title>
+    <title>Querida Lay...</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600&family=Great+Vibes&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Playfair+Display:wght@500;600&display=swap" rel="stylesheet">
 </head>
-<div id="pantalla-inicio" class="pantalla-inicio">
+<body>
+    <div id="pantalla-inicio" class="pantalla-inicio">
         <button id="boton-abrir" class="boton-abrir">Toca para abrir tu carta 💌</button>
     </div>
-<body>
+
     <div class="lienzo">
-        <header>
-            <h1>Tanto querias una carta, aca tenes</h1>
-        </header>
         
+        <img src="img/Flor Blanca.png" class="flor flor-blanca" alt="Flor Blanca">
+        <img src="img/Flor Rosa.png" class="flor flor-rosa" alt="Flor Rosa">
+        <img src="img/Flor amarilla.png" class="flor flor-amarilla" alt="Flor Amarilla">
+
         <main>
-            <div class="sobre-rojo">
-                <div class="interior-sobre"></div>
+            <div class="composicion-carta">
+                <img src="img/SobreRojo.png" class="imagen-sobre" alt="Sobre Rojo">
                 
-                <div class="carta">
-                    <h2 class="saludo">Lay,</h2>
-                    
+                <div class="nota-papel">
                     <p class="mensaje">
-                        Algo de demora, pero lo bueno se hace esperar... n// 
-                        A caso solo te doy risa, pensaba yo que habia algo más..
-                        Bajisima la vara para dedicarme un tiktok, a mi solo me llamaste la atención.
+                        Algo de demora, pero lo bueno se hace esperar... <br><br>
+                        Acaso solo te doy risa, pensaba yo que habia algo más..<br>
+                        Bajisima la vara para dedicarme un tiktok, a mi solo me llamaste la atención.<br>
                         Si tan bien te hice sentir, imaginate cuando nos veamos de vuelta...
                     </p>
 
-                    <p class="firma">
-                        Tobías
-                    </p>
+                    <div class="pie-firma">
+                        <span class="firma">-Tobi</span>
+                        <span class="telefono">11 4🤍31-1515</span>
+                    </div>
                 </div>
             </div>
             
             <a href="URL_DE_TU_WORDLE" class="boton-siguiente">
-                Aca si te pinta un Wordle
+                Acá si te pinta un Wordle
                 <img src="img/icono_wordle.png" alt="Icono Wordle" class="icono-w">
             </a>
         </main>
         
         <footer>
             <div class="controles-musica">
-                <label for="reproductor-audio">Música de fondo: [Canción Preferida]</label>
-                <audio id="reproductor-audio" autoplay loop controls class="reproductor">
-                    <source src="img/tu-cancion.mp3" type="audio/mpeg">
+                <label for="reproductor-audio">Música de fondo:</label>
+                <audio id="reproductor-audio" loop controls class="reproductor">
+                    <source src="img/TemaFinal.mp3" type="audio/mpeg">
                     Tu navegador no soporta el elemento de audio.
                 </audio>
             </div>
         </footer>
     </div>
+
     <script>
         document.getElementById('boton-abrir').addEventListener('click', function() {
-            // Reproducir la música
             document.getElementById('reproductor-audio').play();
             
-            // Ocultar la pantalla de inicio con una animación suave
             let pantalla = document.getElementById('pantalla-inicio');
             pantalla.style.opacity = '0';
             setTimeout(function() {
                 pantalla.style.display = 'none';
-            }, 500); // Espera medio segundo a que termine de desvanecerse
+            }, 500); 
         });
     </script>
 </body>
