@@ -1,22 +1,183 @@
-/* Reseteo básico */
+/* --- RESETEO Y OPTIMIZACIÓN MÓVIL --- */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    /* Evita que Safari haga zoom raro al tocar botones */
+    touch-action: manipulation; 
 }
 
 body {
-    /* ACÁ CORREGÍ EL NOMBRE DEL FONDO A .jpg.jpeg */
-    background: url('img/TelaBeige.jpg.jpeg') repeat; 
+    /* OJO ACÁ: Usamos la doble extensión exacta que se vio en tu GitHub */
+    background: url('img/TelaBeige.jpg.jpeg') repeat center top; 
     background-size: cover; 
     color: #111;
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 100vh;
-    padding: 20px;
     font-family: 'Playfair Display', serif;
+    /* Fundamental para que en el iPhone no haya scroll horizontal roto */
     overflow-x: hidden; 
 }
 
-/* ... (Dejá el resto de tu código CSS exactamente igual que antes) ... */
+.lienzo {
+    width: 100%;
+    max-width: 500px; /* Limita el ancho al tamaño de un celu grande */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+    padding: 20px 10px;
+}
+
+/* --- ESTILOS DE LAS FLORES --- */
+.flor {
+    position: fixed; /* Se quedan fijas en las esquinas aunque bajes */
+    z-index: 0; 
+    pointer-events: none; /* MAGIA: Esto hace que el teléfono las ignore y no estorben para tocar botones */
+}
+
+.flor-blanca {
+    top: -10px;
+    left: -20px;
+    width: 130px;
+    transform: rotate(-10deg);
+}
+
+.flor-rosa {
+    top: 25%;
+    right: -25px;
+    width: 140px;
+    transform: rotate(15deg);
+}
+
+.flor-amarilla {
+    bottom: 5%;
+    left: 10%;
+    width: 150px;
+    transform: rotate(-10deg);
+}
+
+/* --- COMPOSICIÓN DE LA CARTA (SOBRE + NOTA) --- */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    z-index: 10; 
+}
+
+.composicion-carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 30px;
+    position: relative;
+}
+
+.imagen-sobre {
+    width: 100%;
+    max-width: 390px; /* Ajustado para que se vea perfecto en el iPhone 16 Plus */
+    display: block;
+    filter: drop-shadow(0 10px 15px rgba(0,0,0,0.25)); 
+}
+
+.nota-papel {
+    background: url('img/Nota.png') no-repeat center center;
+    background-size: 100% 100%; 
+    width: 90%;
+    max-width: 350px; /* Un poco más angosta que el sobre */
+    min-height: 380px; 
+    margin-top: -120px; /* Hace que la nota suba y pise el sobre */
+    padding: 40px 30px; /* Márgenes internos para que el texto no toque los bordes */
+    position: relative;
+    z-index: 5; 
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- TEXTO DENTRO DE LA NOTA --- */
+.mensaje {
+    font-family: 'Caveat', cursive; 
+    font-size: 1.4rem; /* Tamaño optimizado para la pantalla del iPhone */
+    line-height: 1.3;
+    text-align: center;
+    font-weight: 600;
+}
+
+.pie-firma {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 20px;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+
+.firma {
+    font-size: 1.8rem;
+}
+
+.telefono {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+/* --- ESTILOS DEL BOTÓN WORDLE --- */
+.boton-siguiente {
+    background-color: #f5ebd9; /* Beige claro */
+    color: #4a4a4a; 
+    padding: 12px 30px;
+    border: 1px solid #d8caba; 
+    border-radius: 8px; 
+    text-decoration: none; 
+    font-size: 1.1rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+    z-index: 20; /* Lo mantiene por encima de todo */
+    position: relative;
+}
+
+.boton-siguiente:hover {
+    background-color: #e6dac6; 
+    transform: translateY(-2px); 
+}
+
+/* --- PANTALLA DE INICIO --- */
+.pantalla-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f7e8e3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    transition: opacity 0.5s ease; 
+}
+
+.boton-abrir {
+    background-color: #d81b60;
+    color: white;
+    font-size: 1.3rem;
+    padding: 18px 35px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.boton-abrir:hover {
+    transform: scale(1.05); 
+    background-color: #ad1457;
+}
