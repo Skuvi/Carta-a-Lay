@@ -1,0 +1,210 @@
+/* Reseteo básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    /* Tu imagen de tela de fondo */
+    background: url('img/TelaBeige.jpg') repeat; 
+    background-size: cover; /* Asegura que cubra todo */
+    color: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    padding: 20px;
+    font-family: 'Playfair Display', serif;
+    overflow-x: hidden; /* Evita scroll horizontal si las flores se salen */
+}
+
+.lienzo {
+    width: 100%;
+    max-width: 600px; /* Un poco más angosto para que se parezca a un celular */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative; /* Importante para que las flores se ubiquen respecto a este contenedor */
+}
+
+/* --- ESTILOS DE LAS FLORES --- */
+.flor {
+    position: absolute;
+    z-index: 0; /* Las pone por detrás de la carta */
+    max-width: 150px;
+}
+
+.flor-blanca {
+    top: -20px;
+    left: -40px;
+    transform: rotate(-15deg);
+}
+
+.flor-rosa {
+    top: 50px;
+    right: -40px;
+    transform: rotate(20deg);
+}
+
+.flor-amarilla {
+    bottom: 50px;
+    left: 20%;
+    transform: rotate(-10deg);
+}
+
+/* --- COMPOSICIÓN DE LA CARTA (SOBRE + NOTA) --- */
+main {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    z-index: 10; /* Por encima de las flores */
+}
+
+.composicion-carta {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.imagen-sobre {
+    width: 90%;
+    max-width: 450px;
+    display: block;
+    filter: drop-shadow(0 15px 15px rgba(0,0,0,0.15)); /* Sombra para el sobre */
+}
+
+.nota-papel {
+    /* Usamos tu imagen de nota como fondo de este contenedor */
+    background: url('img/Nota.png') no-repeat center center;
+    background-size: 100% 100%; /* Estira la imagen para cubrir el contenedor */
+    width: 85%;
+    max-width: 420px;
+    min-height: 350px;
+    margin-top: -150px; /* MAGIA: Esto hace que la nota suba y pise al sobre */
+    padding: 50px 40px;
+    position: relative;
+    z-index: 5; /* Asegura que la nota esté por encima del sobre */
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+/* --- TEXTO DENTRO DE LA NOTA --- */
+.mensaje {
+    font-family: 'Caveat', cursive; /* Fuente tipo manuscrita */
+    font-size: 1.6rem;
+    line-height: 1.4;
+    text-align: center;
+    font-weight: 500;
+}
+
+.pie-firma {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    margin-top: 30px;
+    font-family: 'Caveat', cursive;
+    font-weight: 700;
+}
+
+.firma {
+    font-size: 2rem;
+}
+
+.telefono {
+    font-size: 1.4rem;
+    font-weight: 500;
+}
+
+/* --- ESTILOS DEL BOTÓN WORDLE --- */
+.boton-siguiente {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background-color: transparent; /* Transparente para que se vea el lino */
+    color: #333;
+    padding: 10px 20px;
+    border: 2px solid #333;
+    border-radius: 50px;
+    text-decoration: none;
+    font-size: 1rem;
+    font-weight: 600;
+    transition: transform 0.3s ease, background-color 0.3s ease;
+    margin-bottom: 20px;
+}
+
+.boton-siguiente:hover {
+    background-color: rgba(0,0,0,0.05);
+    transform: translateY(-5px);
+}
+
+.icono-w {
+    width: 25px;
+    height: 25px;
+}
+
+/* --- REPRODUCTOR DE AUDIO --- */
+footer {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    z-index: 10;
+}
+
+.controles-musica {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.reproductor {
+    width: 250px;
+    height: 30px;
+    opacity: 0.7;
+    transition: opacity 0.3s ease;
+}
+
+.reproductor:hover {
+    opacity: 1;
+}
+
+/* --- PANTALLA DE INICIO --- */
+.pantalla-inicio {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: #f7e8e3; 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999; 
+    transition: opacity 0.5s ease; 
+}
+
+.boton-abrir {
+    background-color: #d81b60;
+    color: white;
+    font-size: 1.5rem;
+    padding: 20px 40px;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    font-family: 'Playfair Display', serif;
+    box-shadow: 0 5px 15px rgba(216, 27, 96, 0.4);
+    transition: transform 0.3s ease;
+}
+
+.boton-abrir:hover {
+    transform: scale(1.05); 
+    background-color: #ad1457;
+}
