@@ -43,19 +43,16 @@
             </a>
         </main>
         
-        <footer>
-            <div class="controles-musica">
-                <label for="reproductor-audio">Música de fondo:</label>
-                <audio id="reproductor-audio" loop controls class="reproductor">
-                    <source src="img/TemaFinal.mp3" type="audio/mpeg">
-                    Tu navegador no soporta el elemento de audio.
-                </audio>
-            </div>
+        <footer style="display: none;">
+            <audio id="reproductor-audio" loop>
+                <source src="img/TemaFinal.mp3" type="audio/mpeg">
+            </audio>
         </footer>
     </div>
 
     <script>
         document.getElementById('boton-abrir').addEventListener('click', function() {
+            // Esto arranca la música de fondo
             document.getElementById('reproductor-audio').play();
             
             let pantalla = document.getElementById('pantalla-inicio');
