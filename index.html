@@ -51,6 +51,7 @@
 
     <script>
         document.getElementById('boton-abrir').addEventListener('click', function() {
+            // Esto le da play a la música inmediatamente después del toque (regla de Apple)
             document.getElementById('reproductor-audio').play();
             
             let pantalla = document.getElementById('pantalla-inicio');
