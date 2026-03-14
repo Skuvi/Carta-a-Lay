@@ -1,0 +1,21 @@
+/* Estilos para el botón flotante */
+.boton-flotante {
+    position: fixed; /* Lo deja fijo en la pantalla aunque hagas scroll */
+    bottom: 30px;    /* Distancia desde abajo */
+    right: 30px;     /* Distancia desde la derecha */
+    background-color: #d81b60; /* El mismo tono rosado de las letras */
+    color: white;
+    padding: 15px 25px;
+    border-radius: 50px; /* Bordes redondeados */
+    text-decoration: none; /* Le saca el subrayado al link */
+    font-family: 'Lora', serif;
+    font-size: 1.1rem;
+    box-shadow: 0 4px 15px rgba(216, 27, 96, 0.4); /* Sombra para que resalte */
+    transition: transform 0.3s ease, background-color 0.3s ease; /* Animación suave */
+}
+
+/* Efecto cuando pasas el mouse por encima */
+.boton-flotante:hover {
+    background-color: #ad144b; /* Un tono un poco más oscuro */
+    transform: translateY(-5px); /* Se levanta un poquito */
+}
